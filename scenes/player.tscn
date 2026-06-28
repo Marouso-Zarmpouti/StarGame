@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c17wp22m53gr8"]
+
+[ext_resource type="Script" uid="uid://dxduyi8fw1hl5" path="res://player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://byavrv3o4mt8d" path="res://c1.png" id="2_qhqgy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dqkch"]
+radius = 249.00201
+
+[node name="Player" type="CharacterBody2D" unique_id=672131042]
+script = ExtResource("1_g2els")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1016778882]
+texture = ExtResource("2_qhqgy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=398030010]
+shape = SubResource("CircleShape2D_dqkch")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1939065354]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1809956974]
+shape = SubResource("CircleShape2D_dqkch")

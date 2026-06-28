@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dw5lvpbsho5d1"]
+
+[ext_resource type="Script" uid="uid://bjg3qp0mq27mc" path="res://node_2d.gd" id="1_2ntfi"]
+
+[node name="Node2D" type="Node2D" unique_id=122492257]
+script = ExtResource("1_2ntfi")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1263417195]
+offset_right = 40.0
+offset_bottom = 40.0
