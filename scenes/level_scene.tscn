@@ -1,3 +1,58 @@
 [gd_scene format=3 uid="uid://djrj2ndslqbib"]
 
+[ext_resource type="Script" uid="uid://dijom8huugnag" path="res://scenes/level_scene.gd" id="1_a74lg"]
+[ext_resource type="Texture2D" uid="uid://bmqryrvus1e0s" path="res://cfefc43facd471bdd8bc9c37e8bf8786.jpg" id="1_bl4ss"]
+[ext_resource type="Texture2D" uid="uid://ceqomrmku8lno" path="res://2hhh.png" id="2_bl4ss"]
+
 [node name="level_scene" type="Node2D" unique_id=1131421262]
+script = ExtResource("1_a74lg")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=366529720]
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 1201.0
+offset_bottom = 674.0
+texture = ExtResource("1_bl4ss")
+
+[node name="GarlicContainer" type="HBoxContainer" parent="." unique_id=1850326370]
+offset_left = 237.0
+offset_top = 119.0
+offset_right = 898.0
+offset_bottom = 234.0
+
+[node name="Garlic1" type="TextureRect" parent="GarlicContainer" unique_id=150178996]
+layout_mode = 2
+texture = ExtResource("2_bl4ss")
+
+[node name="Garlic2" type="TextureRect" parent="GarlicContainer" unique_id=444635159]
+layout_mode = 2
+texture = ExtResource("2_bl4ss")
+
+[node name="Garlic3" type="TextureRect" parent="GarlicContainer" unique_id=453492202]
+layout_mode = 2
+texture = ExtResource("2_bl4ss")
+
+[node name="Garlic4" type="TextureRect" parent="GarlicContainer" unique_id=1847631881]
+layout_mode = 2
+texture = ExtResource("2_bl4ss")
+
+[node name="Garlic5" type="TextureRect" parent="GarlicContainer" unique_id=1310349660]
+layout_mode = 2
+texture = ExtResource("2_bl4ss")
+
+[node name="Level" type="RichTextLabel" parent="." unique_id=1716772887]
+offset_left = 487.0
+offset_top = 306.0
+offset_right = 664.0
+offset_bottom = 375.0
+theme_override_font_sizes/normal_font_size = 42
+text = "Level #"
+
+[node name="Timer" type="RichTextLabel" parent="." unique_id=768242897]
+offset_left = 514.0
+offset_top = 508.0
+offset_right = 658.0
+offset_bottom = 586.0
+theme_override_colors/default_color = Color(1, 0.9882353, 1, 1)
+theme_override_font_sizes/normal_font_size = 42
+text = "0.0"
