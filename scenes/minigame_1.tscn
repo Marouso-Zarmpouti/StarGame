@@ -1,131 +1,129 @@
 [gd_scene format=3 uid="uid://dsgruqde8cltx"]
 
-[ext_resource type="Script" uid="uid://dply8y37evjh0" path="res://scenes/minigame_1.gd" id="1_fa05o"]
+[ext_resource type="Script" uid="uid://bbwda3amae66i" path="res://scenes/themed_timer.gd" id="1_fa05o"]
 [ext_resource type="Texture2D" uid="uid://c1iocug0wgj06" path="res://8898fcb4515712ba5792c83cbd24df26.jpg" id="1_tk6fs"]
 [ext_resource type="PackedScene" uid="uid://c17wp22m53gr8" path="res://scenes/player.tscn" id="2_og05i"]
 [ext_resource type="Texture2D" uid="uid://ceqomrmku8lno" path="res://2hhh.png" id="3_lmjug"]
 [ext_resource type="Script" uid="uid://jjl5n7b1m2nx" path="res://scenes/garlic.gd" id="3_v5ebm"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_og05i"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_og05i"]
+size = Vector2(1153, 64)
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_og05i"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tk6fs"]
+size = Vector2(793, 36)
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lmjug"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lmjug"]
+size = Vector2(528, 35)
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_v5ebm"]
-
-[sub_resource type="Animation" id="Animation_v5ebm"]
+[sub_resource type="Animation" id="Animation_fa05o"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
+tracks/0/path = NodePath("Garlic/Garlic:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(948, 129)]
+"values": [Vector2(850, 300)]
 }
 
-[sub_resource type="Animation" id="Animation_fa05o"]
+[sub_resource type="Animation" id="Animation_j1cg4"]
 resource_name = "floating"
-loop_mode = 1
+loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
+tracks/0/path = NodePath("Garlic/Garlic:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.06666666, 1),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(948, 129), Vector2(951, 92)]
+"values": [Vector2(850, 300), Vector2(840, 270)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_j1cg4"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vc5od"]
 _data = {
-&"RESET": SubResource("Animation_v5ebm"),
-&"floating": SubResource("Animation_fa05o")
+&"RESET": SubResource("Animation_fa05o"),
+&"floating": SubResource("Animation_j1cg4")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_vc5od"]
-radius = 69.02898
+[sub_resource type="CircleShape2D" id="CircleShape2D_xpvfh"]
+radius = 68.007355
 
-[node name="minigame_1" type="Node2D" unique_id=1249714408]
-position = Vector2(0, 89)
+[node name="minigame_1" type="Node2D" unique_id=511884805]
 script = ExtResource("1_fa05o")
 
-[node name="Scrolling Background" type="Parallax2D" parent="." unique_id=713816779]
+[node name="ScrollingBackground" type="Parallax2D" parent="." unique_id=259931274]
 repeat_size = Vector2(1000, 0)
 autoscroll = Vector2(100, 0)
 
-[node name="Background" type="TextureRect" parent="Scrolling Background" unique_id=1765861351]
-offset_left = -8.0
-offset_top = -99.0
-offset_right = 1151.0
-offset_bottom = 563.0
+[node name="Background" type="TextureRect" parent="ScrollingBackground" unique_id=874077749]
+offset_right = 1152.0
+offset_bottom = 648.0
 texture = ExtResource("1_tk6fs")
 
-[node name="Player" parent="Scrolling Background" unique_id=672131042 instance=ExtResource("2_og05i")]
-position = Vector2(123, 398)
+[node name="Platform1" type="StaticBody2D" parent="." unique_id=2103478099]
 
-[node name="Platform1" type="StaticBody2D" parent="." unique_id=1104787894]
-physics_material_override = SubResource("PhysicsMaterial_og05i")
-
-[node name="ColorRect" type="ColorRect" parent="Platform1" unique_id=2032925373]
-offset_top = 484.0
-offset_right = 2151.0
-offset_bottom = 559.0
-color = Color(0.42555726, 0.5288813, 1, 1)
-
-[node name="CollisionShape2Dp1" type="CollisionShape2D" parent="Platform1" unique_id=1064932141]
-position = Vector2(1075.5, 521.5)
-shape = SubResource("WorldBoundaryShape2D_og05i")
-
-[node name="Platform2" type="StaticBody2D" parent="." unique_id=1504061402]
-
-[node name="ColorRect" type="ColorRect" parent="Platform2" unique_id=1205854833]
-offset_left = 333.0
-offset_top = 238.0
+[node name="ColorRect" type="ColorRect" parent="Platform1" unique_id=227718070]
+offset_top = 583.0
 offset_right = 1152.0
-offset_bottom = 279.0
-color = Color(0.42555726, 0.5288813, 1, 1)
+offset_bottom = 648.0
+color = Color(0.75934577, 0.75289184, 0.9669381, 1)
 
-[node name="CollisionShape2Dp2" type="CollisionShape2D" parent="Platform2" unique_id=1069478400]
-position = Vector2(742.5, 258.5)
-shape = SubResource("WorldBoundaryShape2D_lmjug")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform1" unique_id=429123087]
+position = Vector2(575.5, 614)
+shape = SubResource("RectangleShape2D_og05i")
 
-[node name="Platform3" type="StaticBody2D" parent="." unique_id=1057209399]
+[node name="Platform2" type="StaticBody2D" parent="." unique_id=1306575804]
 
-[node name="ColorRect" type="ColorRect" parent="Platform3" unique_id=84363260]
-offset_top = 49.0
-offset_right = 815.0
-offset_bottom = 90.0
-color = Color(0.42555726, 0.5288813, 1, 1)
+[node name="ColorRect" type="ColorRect" parent="Platform2" unique_id=1538758618]
+offset_left = 359.0
+offset_top = 417.0
+offset_right = 1152.0
+offset_bottom = 453.0
+color = Color(0.75934577, 0.75289184, 0.9669381, 1)
 
-[node name="CollisionShape2Dp3" type="CollisionShape2D" parent="Platform3" unique_id=1534734540]
-position = Vector2(407.5, 69.5)
-shape = SubResource("WorldBoundaryShape2D_v5ebm")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2" unique_id=1603390912]
+position = Vector2(755.5, 435)
+shape = SubResource("RectangleShape2D_tk6fs")
 
-[node name="Garlic" type="Node2D" parent="." unique_id=314547253]
+[node name="Platform3" type="StaticBody2D" parent="." unique_id=755513606]
+
+[node name="ColorRect" type="ColorRect" parent="Platform3" unique_id=2073357265]
+offset_left = 624.0
+offset_top = 184.0
+offset_right = 1152.0
+offset_bottom = 219.0
+color = Color(0.75934577, 0.75289184, 0.9669381, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3" unique_id=1600871648]
+position = Vector2(888, 201.5)
+shape = SubResource("RectangleShape2D_lmjug")
+
+[node name="Player" parent="." unique_id=1406662313 instance=ExtResource("2_og05i")]
+position = Vector2(182, 479)
+
+[node name="Garlic" type="Node2D" parent="." unique_id=1633018461]
 script = ExtResource("3_v5ebm")
 
-[node name="Garlic" type="TextureRect" parent="Garlic" unique_id=1963992813]
-offset_left = 948.0
-offset_top = 129.0
-offset_right = 1073.0
-offset_bottom = 234.0
+[node name="Garlic" type="TextureRect" parent="Garlic" unique_id=87857834]
+offset_left = 850.0
+offset_top = 300.0
+offset_right = 975.0
+offset_bottom = 405.0
 texture = ExtResource("3_lmjug")
 
-[node name="animation" type="AnimationPlayer" parent="Garlic" unique_id=983890848]
-root_node = NodePath("../Garlic")
-libraries/ = SubResource("AnimationLibrary_j1cg4")
+[node name="animation" type="AnimationPlayer" parent="Garlic" unique_id=1831806469]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_vc5od")
 
-[node name="Area2D" type="Area2D" parent="Garlic" unique_id=1871487547]
-position = Vector2(1024, 143)
+[node name="Area2D" type="Area2D" parent="Garlic" unique_id=373266762]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Garlic/Area2D" unique_id=547698704]
-shape = SubResource("CircleShape2D_vc5od")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Garlic/Area2D" unique_id=737783708]
+position = Vector2(908, 322)
+shape = SubResource("CircleShape2D_xpvfh")
