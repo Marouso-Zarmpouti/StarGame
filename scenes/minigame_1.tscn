@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://dsgruqde8cltx"]
 
-[ext_resource type="Script" uid="uid://bbwda3amae66i" path="res://scenes/themed_timer.gd" id="1_fa05o"]
+[ext_resource type="Script" uid="uid://dply8y37evjh0" path="res://scenes/minigame_1.gd" id="1_j1cg4"]
 [ext_resource type="Texture2D" uid="uid://c1iocug0wgj06" path="res://8898fcb4515712ba5792c83cbd24df26.jpg" id="1_tk6fs"]
 [ext_resource type="PackedScene" uid="uid://c17wp22m53gr8" path="res://scenes/player.tscn" id="2_og05i"]
 [ext_resource type="Texture2D" uid="uid://ceqomrmku8lno" path="res://2hhh.png" id="3_lmjug"]
 [ext_resource type="Script" uid="uid://jjl5n7b1m2nx" path="res://scenes/garlic.gd" id="3_v5ebm"]
+[ext_resource type="PackedScene" uid="uid://dw5lvpbsho5d1" path="res://scenes/themed_timer.tscn" id="6_j1cg4"]
 
 [sub_resource type="Animation" id="Animation_fa05o"]
 length = 0.001
@@ -46,17 +47,26 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_xpvfh"]
 radius = 68.007355
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_og05i"]
-size = Vector2(1153, 64)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tk6fs"]
 size = Vector2(793, 36)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lmjug"]
 size = Vector2(528, 35)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_og05i"]
+size = Vector2(1153, 64)
+
 [node name="minigame_1" type="Node2D" unique_id=511884805]
-script = ExtResource("1_fa05o")
+script = ExtResource("1_j1cg4")
+
+[node name="ScrollingBackground" type="Parallax2D" parent="." unique_id=259931274]
+repeat_size = Vector2(1000, 0)
+autoscroll = Vector2(100, 0)
+
+[node name="Background" type="TextureRect" parent="ScrollingBackground" unique_id=874077749]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_tk6fs")
 
 [node name="Player" parent="." unique_id=1406662313 instance=ExtResource("2_og05i")]
 position = Vector2(182, 479)
@@ -80,18 +90,6 @@ libraries/ = SubResource("AnimationLibrary_vc5od")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Garlic/Area2D" unique_id=737783708]
 position = Vector2(908, 322)
 shape = SubResource("CircleShape2D_xpvfh")
-
-[node name="Platform1" type="StaticBody2D" parent="." unique_id=2103478099]
-
-[node name="ColorRect" type="ColorRect" parent="Platform1" unique_id=227718070]
-offset_top = 583.0
-offset_right = 1152.0
-offset_bottom = 648.0
-color = Color(0.75934577, 0.75289184, 0.9669381, 1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform1" unique_id=429123087]
-position = Vector2(575.5, 614)
-shape = SubResource("RectangleShape2D_og05i")
 
 [node name="Platform2" type="StaticBody2D" parent="." unique_id=1306575804]
 
@@ -119,11 +117,20 @@ color = Color(0.75934577, 0.75289184, 0.9669381, 1)
 position = Vector2(888, 201.5)
 shape = SubResource("RectangleShape2D_lmjug")
 
-[node name="ScrollingBackground" type="Parallax2D" parent="." unique_id=259931274]
-repeat_size = Vector2(1000, 0)
-autoscroll = Vector2(100, 0)
+[node name="Platform1" type="StaticBody2D" parent="." unique_id=2103478099]
 
-[node name="Background" type="TextureRect" parent="ScrollingBackground" unique_id=874077749]
+[node name="ColorRect" type="ColorRect" parent="Platform1" unique_id=227718070]
+offset_top = 583.0
 offset_right = 1152.0
 offset_bottom = 648.0
-texture = ExtResource("1_tk6fs")
+color = Color(0.75934577, 0.75289184, 0.9669381, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform1" unique_id=429123087]
+position = Vector2(575.5, 614)
+shape = SubResource("RectangleShape2D_og05i")
+
+[node name="ThemedTimer" parent="." unique_id=213094639 instance=ExtResource("6_j1cg4")]
+
+[node name="timer2" type="RichTextLabel" parent="ThemedTimer" unique_id=1144087272]
+offset_right = 40.0
+offset_bottom = 40.0
