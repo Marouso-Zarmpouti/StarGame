@@ -6,15 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://ceqomrmku8lno" path="res://2hhh.png" id="3_lmjug"]
 [ext_resource type="Script" uid="uid://jjl5n7b1m2nx" path="res://scenes/garlic.gd" id="3_v5ebm"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_og05i"]
-size = Vector2(1153, 64)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tk6fs"]
-size = Vector2(793, 36)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lmjug"]
-size = Vector2(528, 35)
-
 [sub_resource type="Animation" id="Animation_fa05o"]
 length = 0.001
 tracks/0/type = "value"
@@ -55,17 +46,40 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_xpvfh"]
 radius = 68.007355
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_og05i"]
+size = Vector2(1153, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tk6fs"]
+size = Vector2(793, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lmjug"]
+size = Vector2(528, 35)
+
 [node name="minigame_1" type="Node2D" unique_id=511884805]
 script = ExtResource("1_fa05o")
 
-[node name="ScrollingBackground" type="Parallax2D" parent="." unique_id=259931274]
-repeat_size = Vector2(1000, 0)
-autoscroll = Vector2(100, 0)
+[node name="Player" parent="." unique_id=1406662313 instance=ExtResource("2_og05i")]
+position = Vector2(182, 479)
 
-[node name="Background" type="TextureRect" parent="ScrollingBackground" unique_id=874077749]
-offset_right = 1152.0
-offset_bottom = 648.0
-texture = ExtResource("1_tk6fs")
+[node name="Garlic" type="Node2D" parent="." unique_id=1633018461]
+script = ExtResource("3_v5ebm")
+
+[node name="Garlic" type="TextureRect" parent="Garlic" unique_id=87857834]
+offset_left = 850.0
+offset_top = 300.0
+offset_right = 975.0
+offset_bottom = 405.0
+texture = ExtResource("3_lmjug")
+
+[node name="animation" type="AnimationPlayer" parent="Garlic" unique_id=1831806469]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_vc5od")
+
+[node name="Area2D" type="Area2D" parent="Garlic" unique_id=373266762]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Garlic/Area2D" unique_id=737783708]
+position = Vector2(908, 322)
+shape = SubResource("CircleShape2D_xpvfh")
 
 [node name="Platform1" type="StaticBody2D" parent="." unique_id=2103478099]
 
@@ -105,25 +119,11 @@ color = Color(0.75934577, 0.75289184, 0.9669381, 1)
 position = Vector2(888, 201.5)
 shape = SubResource("RectangleShape2D_lmjug")
 
-[node name="Player" parent="." unique_id=1406662313 instance=ExtResource("2_og05i")]
-position = Vector2(182, 479)
+[node name="ScrollingBackground" type="Parallax2D" parent="." unique_id=259931274]
+repeat_size = Vector2(1000, 0)
+autoscroll = Vector2(100, 0)
 
-[node name="Garlic" type="Node2D" parent="." unique_id=1633018461]
-script = ExtResource("3_v5ebm")
-
-[node name="Garlic" type="TextureRect" parent="Garlic" unique_id=87857834]
-offset_left = 850.0
-offset_top = 300.0
-offset_right = 975.0
-offset_bottom = 405.0
-texture = ExtResource("3_lmjug")
-
-[node name="animation" type="AnimationPlayer" parent="Garlic" unique_id=1831806469]
-root_node = NodePath("../..")
-libraries/ = SubResource("AnimationLibrary_vc5od")
-
-[node name="Area2D" type="Area2D" parent="Garlic" unique_id=373266762]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Garlic/Area2D" unique_id=737783708]
-position = Vector2(908, 322)
-shape = SubResource("CircleShape2D_xpvfh")
+[node name="Background" type="TextureRect" parent="ScrollingBackground" unique_id=874077749]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_tk6fs")
