@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://bjsui0olxgfyk"]
 
+[ext_resource type="Script" uid="uid://berh8nr1vbyou" path="res://scenes/minigame_2.gd" id="1_dqa6p"]
 [ext_resource type="Texture2D" uid="uid://c1iocug0wgj06" path="res://8898fcb4515712ba5792c83cbd24df26.jpg" id="1_ju4f3"]
 [ext_resource type="Texture2D" uid="uid://ceqomrmku8lno" path="res://2hhh.png" id="2_uiylj"]
 [ext_resource type="Script" uid="uid://b4c5ks273ygvx" path="res://scenes/button_1.gd" id="3_ksu6r"]
 [ext_resource type="PackedScene" uid="uid://dw5lvpbsho5d1" path="res://scenes/themed_timer.tscn" id="4_dqa6p"]
 
 [node name="Minigame_2" type="Node2D" unique_id=738347854]
+script = ExtResource("1_dqa6p")
 
 [node name="Scrolling Background" type="Parallax2D" parent="." unique_id=853820633]
 repeat_size = Vector2(1000, 0)
@@ -19,8 +21,50 @@ offset_bottom = 563.0
 texture = ExtResource("1_ju4f3")
 
 [node name="Button_1" type="TextureButton" parent="." unique_id=1233126704]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 61.0
+offset_top = 40.0
+offset_right = 186.0
+offset_bottom = 145.0
+texture_normal = ExtResource("2_uiylj")
+script = ExtResource("3_ksu6r")
+
+[node name="Button_2" type="TextureButton" parent="." unique_id=437984450]
+offset_left = 891.0
+offset_top = 355.0
+offset_right = 1016.0
+offset_bottom = 460.0
+texture_normal = ExtResource("2_uiylj")
+script = ExtResource("3_ksu6r")
+
+[node name="Button_3" type="TextureButton" parent="." unique_id=506897009]
+offset_left = 336.0
+offset_top = 263.0
+offset_right = 461.0
+offset_bottom = 368.0
+texture_normal = ExtResource("2_uiylj")
+script = ExtResource("3_ksu6r")
+
+[node name="Button_4" type="TextureButton" parent="." unique_id=389878083]
+offset_left = 1004.0
+offset_top = 26.0
+offset_right = 1129.0
+offset_bottom = 131.0
+texture_normal = ExtResource("2_uiylj")
+script = ExtResource("3_ksu6r")
+
+[node name="Button_5" type="TextureButton" parent="." unique_id=855917867]
+offset_left = 671.0
+offset_top = 36.0
+offset_right = 796.0
+offset_bottom = 141.0
+texture_normal = ExtResource("2_uiylj")
+script = ExtResource("3_ksu6r")
+
+[node name="Button_6" type="TextureButton" parent="." unique_id=1653361229]
+offset_left = 73.0
+offset_top = 399.0
+offset_right = 198.0
+offset_bottom = 504.0
 texture_normal = ExtResource("2_uiylj")
 script = ExtResource("3_ksu6r")
 
