@@ -88,7 +88,7 @@ libraries/ = SubResource("AnimationLibrary_vc5od")
 [node name="Area2D" type="Area2D" parent="Garlic" unique_id=373266762]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Garlic/Area2D" unique_id=737783708]
-position = Vector2(916, 350)
+position = Vector2(1025, 346)
 shape = SubResource("CircleShape2D_xpvfh")
 
 [node name="Garlic2" type="Node2D" parent="." unique_id=615237192]
@@ -109,6 +109,26 @@ libraries/ = SubResource("AnimationLibrary_vc5od")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Garlic2/Area2D" unique_id=170439416]
 position = Vector2(124, 180)
+shape = SubResource("CircleShape2D_xpvfh")
+
+[node name="Garlic3" type="Node2D" parent="." unique_id=1677688590]
+script = ExtResource("3_v5ebm")
+
+[node name="Garlic" type="TextureRect" parent="Garlic3" unique_id=1402356965]
+offset_left = 617.0
+offset_top = 74.0
+offset_right = 742.0
+offset_bottom = 179.0
+texture = ExtResource("3_lmjug")
+
+[node name="animation" type="AnimationPlayer" parent="Garlic3" unique_id=1529791747]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_vc5od")
+
+[node name="Area2D" type="Area2D" parent="Garlic3" unique_id=1554633878]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Garlic3/Area2D" unique_id=1688252141]
+position = Vector2(683, 126)
 shape = SubResource("CircleShape2D_xpvfh")
 
 [node name="Platform2" type="StaticBody2D" parent="." unique_id=1306575804]

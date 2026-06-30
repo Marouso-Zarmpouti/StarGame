@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://crxtph0ox524f"]
+
+[ext_resource type="Texture2D" uid="uid://c1iocug0wgj06" path="res://8898fcb4515712ba5792c83cbd24df26.jpg" id="1_y1ayt"]
+[ext_resource type="Texture2D" uid="uid://blyu30xvgv3sh" path="res://loser1.jpg" id="2_an12y"]
+[ext_resource type="Texture2D" uid="uid://bujlg0svo2jv6" path="res://loser2.jpg" id="3_v6383"]
+[ext_resource type="Texture2D" uid="uid://hp0em0kqs6co" path="res://loser3 (3).jpg" id="4_gjh0c"]
+[ext_resource type="Texture2D" uid="uid://coo7tbpwgfrur" path="res://button_loser.png" id="5_gjh0c"]
+[ext_resource type="Script" uid="uid://miuey2s3605b" path="res://scenes/button_l.gd" id="6_4egk4"]
+
+[node name="Loser_scene" type="Node2D" unique_id=707736903]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2088814241]
+offset_left = -11.0
+offset_top = -23.0
+offset_right = 1163.0
+offset_bottom = 658.0
+texture = ExtResource("1_y1ayt")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1096182981]
+offset_top = 1.0
+offset_right = 255.0
+offset_bottom = 301.0
+texture = ExtResource("2_an12y")
+
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=749462647]
+offset_left = 875.0
+offset_top = 1.0
+offset_right = 1150.0
+offset_bottom = 185.0
+texture = ExtResource("3_v6383")
+
+[node name="TextureRect4" type="TextureRect" parent="." unique_id=656349059]
+offset_left = 939.0
+offset_top = 460.0
+offset_right = 1153.0
+offset_bottom = 648.0
+texture = ExtResource("4_gjh0c")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=733236825]
+offset_left = 293.0
+offset_top = 55.0
+offset_right = 851.0
+offset_bottom = 191.0
+theme_override_font_sizes/normal_font_size = 90
+theme_override_font_sizes/bold_font_size = 26
+text = "GAME OVER"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=592047315]
+offset_left = 309.0
+offset_top = 220.0
+offset_right = 948.0
+offset_bottom = 301.0
+theme_override_font_sizes/normal_font_size = 44
+text = "You LOST !!! Maybe try again?"
+
+[node name="Button_L" type="Button" parent="." unique_id=650270451]
+offset_left = 38.0
+offset_top = 444.0
+offset_right = 239.0
+offset_bottom = 526.0
+icon = ExtResource("5_gjh0c")
+expand_icon = true
+script = ExtResource("6_4egk4")
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="." unique_id=1763752918]
+offset_left = 39.0
+offset_top = 392.0
+offset_right = 271.0
+offset_bottom = 443.0
+theme_override_font_sizes/normal_font_size = 27
+text = "Try again? Here:"
