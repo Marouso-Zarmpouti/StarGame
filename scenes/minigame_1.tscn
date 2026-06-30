@@ -48,10 +48,10 @@ _data = {
 radius = 68.007355
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tk6fs"]
-size = Vector2(793, 36)
+size = Vector2(658.5, 36)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lmjug"]
-size = Vector2(528, 35)
+size = Vector2(526, 35)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_og05i"]
 size = Vector2(1153, 64)
@@ -69,7 +69,7 @@ offset_bottom = 648.0
 texture = ExtResource("1_tk6fs")
 
 [node name="Player" parent="." unique_id=1406662313 instance=ExtResource("2_og05i")]
-position = Vector2(182, 479)
+position = Vector2(108, 514)
 
 [node name="Garlic" type="Node2D" parent="." unique_id=1633018461]
 script = ExtResource("3_v5ebm")
@@ -88,33 +88,52 @@ libraries/ = SubResource("AnimationLibrary_vc5od")
 [node name="Area2D" type="Area2D" parent="Garlic" unique_id=373266762]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Garlic/Area2D" unique_id=737783708]
-position = Vector2(908, 322)
+position = Vector2(916, 350)
+shape = SubResource("CircleShape2D_xpvfh")
+
+[node name="Garlic2" type="Node2D" parent="." unique_id=615237192]
+script = ExtResource("3_v5ebm")
+
+[node name="Garlic" type="TextureRect" parent="Garlic2" unique_id=1344124427]
+offset_left = 55.0
+offset_top = 166.0
+offset_right = 180.0
+offset_bottom = 271.0
+texture = ExtResource("3_lmjug")
+
+[node name="animation" type="AnimationPlayer" parent="Garlic2" unique_id=1142312286]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_vc5od")
+
+[node name="Area2D" type="Area2D" parent="Garlic2" unique_id=2041068978]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Garlic2/Area2D" unique_id=170439416]
+position = Vector2(122, 216)
 shape = SubResource("CircleShape2D_xpvfh")
 
 [node name="Platform2" type="StaticBody2D" parent="." unique_id=1306575804]
 
 [node name="ColorRect" type="ColorRect" parent="Platform2" unique_id=1538758618]
-offset_left = 359.0
-offset_top = 417.0
+offset_left = 492.0
+offset_top = 444.0
 offset_right = 1152.0
-offset_bottom = 453.0
+offset_bottom = 480.0
 color = Color(0.75934577, 0.75289184, 0.9669381, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2" unique_id=1603390912]
-position = Vector2(755.5, 435)
+position = Vector2(821.25, 462)
 shape = SubResource("RectangleShape2D_tk6fs")
 
 [node name="Platform3" type="StaticBody2D" parent="." unique_id=755513606]
 
 [node name="ColorRect" type="ColorRect" parent="Platform3" unique_id=2073357265]
-offset_left = 624.0
-offset_top = 184.0
-offset_right = 1152.0
-offset_bottom = 219.0
+offset_top = 308.0
+offset_right = 526.0
+offset_bottom = 343.0
 color = Color(0.75934577, 0.75289184, 0.9669381, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3" unique_id=1600871648]
-position = Vector2(888, 201.5)
+position = Vector2(263, 325.5)
 shape = SubResource("RectangleShape2D_lmjug")
 
 [node name="Platform1" type="StaticBody2D" parent="." unique_id=2103478099]
